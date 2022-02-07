@@ -17,7 +17,19 @@
             I realized thtat I am passionate to wirting computer code.
             I create custom websites to help business do better online.
             I'm excited to take the leap and continue to hone my skills with the right company
-          </p><br>
+          </p>
+          <div class="aboutSkills">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+          </div>
+          <br>
           <a data-aos="fade-up" href="https://drive.google.com/file/d/1ErVf_7_7rRzx4UF5YiARco_-kfVDz8OL/view?usp=sharing">Download CV</a>
         </div>
       </div>
@@ -42,13 +54,14 @@ export default {
   width:80%;
   padding: 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 .about_container img{
-  width: 600px;
-  height: 600px;
+  width: 50%; 
 }
 .about_container .about_content{
+  width: 45%; 
   padding: 25px;
   display:flex;
   justify-content:center;
@@ -63,7 +76,7 @@ export default {
   font-size: 3em;
   width: 10.5em;
 }
-.about_container .about_content h1 > span {
+ h1 > span {
   position: absolute;
   right: 0;
   top: 0;
@@ -103,4 +116,106 @@ export default {
   color:rgb(255, 255, 255);
   border-radius:10px;
 }
+.aboutSkills img{
+  width:50px;
+  height:50px 
+}
+@media (max-width:1000px){
+    .about_container .about_content h1{
+    height: 1em;
+    line-height: 1em;
+    position: relative;
+    overflow: hidden;
+    font-size: 2em;
+    width: 10.5em;
+  }
+  .detail p:nth-child(1){
+  text-align: left;
+  font-size: 1em;
+}
+ p:nth-child(2){
+  margin-top:10px;
+  text-align: left;
+  font-size: 0.9em;
+}
+  @keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -1em;
+  }
+  50% {
+    top: -2em;
+  }
+  75% {
+    top: -1em;
+  }
+  100%{
+    top: 0;
+  }
+}
+}
+@media (max-width:620px){
+  .about_container img{
+  width: 40%; 
+}
+.about_container .about_content{
+  width: 55%; 
+  align-items: right;
+}
+  .about_container .about_content h1{
+    font-size: 1.5em;
+  }
+  .detail p:nth-child(1){
+  text-align: left;
+  font-size: 0.8em;
+}
+ p:nth-child(2){
+  margin-top:10px;
+  text-align: left;
+  font-size: 0.7em;
+}
+  @keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -1em;
+  }
+  50% {
+    top: -2em;
+  }
+  75% {
+    top: -1em;
+  }
+  100%{
+    top: 0;
+  }
+}
+}
+@media(max-width:450px){
+  .about_container img{
+   display: none;
+  }
+  .about_container .about_content{
+    width:85%;
+  }
+  .about_container .about_content h1{
+    font-size: 1.5em;
+  }
+  .detail p:nth-child(1){
+    font-size:1em;
+  }
+  .detail p:nth-child(2){
+    font-size:1em;
+  }
+  .aboutSkills img{
+  width:30px;
+  height:30px;
+  display:inline-block;
+  
+}
+}
+
 </style>

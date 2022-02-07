@@ -10,6 +10,9 @@ export default {
 </script>
 
 <style>
+body{
+  width:100%;
+}
 *{
   margin: 0;
   padding: 0;
@@ -37,7 +40,7 @@ export default {
   background:#ffff;
   transition:all 0.4s;
   width:100%;
-  height:100%;
+  height:auto;
 }
 .dnone{
   display:none;

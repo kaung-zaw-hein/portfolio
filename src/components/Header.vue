@@ -86,6 +86,7 @@ main{
     padding:20px;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items:center;
 }
 .header img{

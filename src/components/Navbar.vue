@@ -4,7 +4,7 @@
            <img :src="logoimg" alt="">
            <div class="icon-bar">
                <i class="fas animate__animated animate__flash animate__slow animate__infinite animate__delay-1s"
-               :class="{'fa-volume-mute' : !store.state.mute , 'fa-volume-up' : store.state.mute }" @click.prevent="switchmode"></i>
+               :class="{'fa-volume-mute' : !store.state.mute , 'fa-volume-up' : store.state.mute }" @click.prevent="soundplay"></i>
                <i class="far animate__animated animate__fadeIn"
                 :class="{'fa-sun' : !store.state.dark , 'fa-moon' : store.state.dark, }" @click.prevent="switchmode"></i>
                <!-- <i class="fas fa-moon animate__animated animate__fadeIn"></i> -->
@@ -14,26 +14,27 @@
                     <option value="mm">Burmese</option>
                </select>
            </div>
+                <audio loop>
+                    <source src="../assets/barradeen-bedtime-after-a-coffee.mp3">
+                        Your browser does not support the
+                        <code>audio</code> element.>
+                </audio>
         </div>
 </template>
 
 <script>
 import { useStore } from 'vuex'
-import {ref} from 'vue'
+import {ref, onBeforeMount } from 'vue'
 export default {
  setup(){
      const store = useStore();
-     console.log(store.state.dark)
      const logoimg = ref();
      let getImgUrl = (pic) => {
          var images = require.context('../assets/images/', false, /\.png$/)
         return images('./' + pic + ".png")
     }
-    logoimg.value = getImgUrl('Brnyr-logos_transparent');
-     const switchmode = () => {
-         store.state.dark = !store.state.dark;
-         console.log(localStorage.getItem("theme"))
-          if(!store.state.dark){
+    const conditions = () =>{
+        if(!store.state.dark){
             // document.querySelector('#app').style.color = "#1a1a1a";
             localStorage.setItem('theme', false);
             document.querySelector('#app').style.backgroundColor =  "#ffff";
@@ -46,10 +47,33 @@ export default {
             document.querySelector('#app').style.backgroundColor =  "#1e1e1e";
             logoimg.value = getImgUrl('Brnyr-logos_white')
         }
-        console.log(logoimg.value)
+    }
+    logoimg.value = getImgUrl('Brnyr-logos_transparent');
+     const switchmode = () => {
+         store.state.dark = !store.state.dark;
+         conditions(); 
      }
-    
-     return{ store, switchmode,logoimg};
+
+     const soundplay = () => {
+         store.state.mute = !store.state.mute;
+         if(store.state.mute){
+             document.querySelector('audio').play();
+             document.querySelector('audio').muted = false;
+         }else{
+             document.querySelector('audio').pause();
+             document.querySelector('audio').muted = true;
+         }
+     }
+     onBeforeMount(() => {
+         if(localStorage.getItem('theme') === 'true'){
+             store.state.dark = true;
+         }else{
+             store.state.dark = false;
+         }
+         conditions();
+       })
+     
+     return{ store, switchmode,logoimg,soundplay};
      }
 }
 </script>
