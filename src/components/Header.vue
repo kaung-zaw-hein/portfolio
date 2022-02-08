@@ -1,6 +1,6 @@
 <template>
    <main :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
-     <Navbar></Navbar>
+    
     <div class="header"
     :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
         <img  class=" animate__animated animate__fadeInUp"  src="../assets/images/Ikbal.png" alt="">
@@ -16,10 +16,8 @@
 
 <script>
 import { useStore } from 'vuex'
- import Navbar from './Navbar'
 import {ref} from 'vue'
 export default {
-  components: { Navbar },
    setup(){
     const store = useStore(); 
      return{store};

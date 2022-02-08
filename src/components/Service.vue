@@ -59,6 +59,9 @@
               </div>
           </div>
     </div>
+        <router-link :to="{name: 'Projects'}"  data-aos="fade-up" class="explore animate__fadeIn animate__animated"
+        :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }"
+        >Lets explore my projects.</router-link>
   </main>
 </template>
 
@@ -87,7 +90,6 @@ main{
 .service_container .service{
     height:33%;
     width:90%;
-    overflow: hidden;
     padding:10px;
     display: flex;
     flex-wrap:nowrap;
@@ -97,8 +99,9 @@ main{
 }
 .service_container .service .block_container .block{
     width:130px;
-    height:210px;
+    height:240px;
     animation: responsive 5s infinite;
+    border-radius:5px;
     margin:0 auto;
 }
 @keyframes responsive {
@@ -119,7 +122,7 @@ main{
   }
   100%{
     width:130px;
-    height:210px;
+    height:240px;
   }
 }
 .service_detail{
@@ -131,7 +134,7 @@ main{
   height: 1em;
   line-height: 1.2em;
   position: relative;
-  overflow: hidden;
+  overflow-y: hidden;
   font-size: 3em;
   width: 12em;
 }
@@ -165,12 +168,20 @@ main{
 .pwa{
     text-align: center;
 }
+.explore{
+    font-size:2.5em;
+    width:100%;
+    text-align: center;
+}
 @media (max-width:1000px){
     .service_container{
         padding:0;
     }
     .service_detail h1{
         font-size:1.5em;
+    }
+    .explore{
+        font-size:2em;
     }
 }
 @media (max-width:600px){
@@ -183,5 +194,9 @@ main{
     .service_container .service .block_container{
         height:500px;
     }
+    .explore{
+        font-size:1.5em;
+    }
 }
+
 </style>
