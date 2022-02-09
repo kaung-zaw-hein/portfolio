@@ -14,7 +14,7 @@
         <div class="detail" data-aos="zoom-in">
           <p>A fronend devloper based out of Myanmar<a href="https://github.com/Kv0nzee?tab=repositories"><i class="devicon-github-original"></i></a></p>
           <p data-aos="fade-up">I got into the field of Web Development when I was in university.
-            I realized thtat I am passionate to wirting computer code.
+            I realized that I am passionate to writing computer code.
             I create custom websites to help business do better online.
             I'm excited to take the leap and continue to hone my skills with the right company<br>
             Contact Me:kaungzawhein1963@gmail.com
@@ -31,7 +31,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
           </div>
           <br>
-          <a data-aos="fade-up" href="https://drive.google.com/file/d/1ErVf_7_7rRzx4UF5YiARco_-kfVDz8OL/view?usp=sharing">Download CV</a>
+          <a data-aos="fade-up" href="https://drive.google.com/file/d/1bLcwJrFjuQ0BLxOh6faBqWNu9qimzC28/view?usp=sharing">Download CV</a>
           <a data-aos="fade-up" href = "mailto:kaungzawhein1963@gmail.com?subject = Feedback&body = Message">
               Contact Me
               </a>
