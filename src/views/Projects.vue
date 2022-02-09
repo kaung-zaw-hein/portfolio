@@ -1,47 +1,127 @@
 <template>
-  <main  :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" class="project_container"> 
+  <main  :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" class="project_container animate__animated animate__fadeIn "> 
       <div :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" class="button_container">
           <div class="active"></div>
-          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }"><span>All</span></button>
-          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }"><span>Vuejs</span></button>
-          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }"><span>Others</span></button>
+          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('all') ">All</button>
+          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('vue') ">Vuejs</button>
+          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('others')">Others</button>
       </div>
-      <div class="projects-slide" v-if="vueslide">
+      <h1 class="animate__animated animate__flash animate__infinite animate__delay-1s">Projects:{{number}}</h1>
+      <div class="projects-slide animate__animated animate__fadeIn animate__faster" v-if="vueslide">
             <Splide :options="{autoplay:true, rewind: true, type:loop ,pauseOnHover : true,resetProgress: true,padding: '20%' }">      
-                <SplideSlide :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
+                <SplideSlide 
+                v-for="project in projectsfilter" :key="project.title">
                     <div class="splideproject">
-                            <h1>Brnyr</h1>
-                            <img src="../assets/images/Ikbal.png" alt="Sample 1">
+                            <h1>{{project.title}}</h1>
                             <div class="link" >
-                                    <a  href="" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }"><i class="devicon-github-original"></i></a>
-                                    <a href="" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" ><i class="devicon-chrome-plain"></i></a>
-                                </div>
+                                    <a  :href="project.githuburl" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }"><i class="devicon-github-original"></i></a>
+                                    <a v-if="project.liveurl" :href="project.liveurl" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" ><i class="devicon-vuejs-plain"></i></a>
+                            </div>
+                            <img :src="project.imageurl" :alt="project.title ">
+                            
                     </div>
                 </SplideSlide>
-              
-                
-               
             </Splide>
+      </div>
+      <div class="projects_container animate__animated animate__fadeIn animate__faster" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" v-if="!vueslide">
+                    <div class="project" :class="{'project1': project.main}"
+                    v-for="project in projectsfilter" :key="project.title">
+                            <img :src="project.imageurl" :alt="project.title">
+                            <h1>{{project.title}}</h1>
+                            <div class="link" >
+                                    <a  :href="project.githuburl" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }"><i class="devicon-github-original"></i></a>
+                                    <a v-if="project.liveurl" :href="project.liveurl" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" >Live: Demo</a>
+                            </div>
+                    </div>
       </div>
   </main>
 </template>
 
 <script>
-import {ref} from 'vue';
+import {ref, computed } from 'vue';
 import { useStore } from 'vuex'
 export default {
     setup(){
         const store = useStore();
         const vueslide = ref(false);
-        return{store,vueslide};
+        const projects = ref(store.state.projects);
+        const number = ref();
+        const status = ref("all"); 
+        const click_button = (val) => {
+            status.value = val;
+            const active = document.querySelector(".active");
+            active.style.left = event.target.offsetLeft + "px";
+        }
+        const projectsfilter = computed(() =>{
+        //     return projects.value.filter(project => {
+        //        return project.tag === status.value;
+        //    }) \
+           if(status.value === "vue"){
+                    vueslide.value = true;
+                    return  projects.value.filter(project => {
+                        return project.tag === status.value;
+                }) 
+           }
+           else if(status.value === "others"){
+                    vueslide.value = false;
+                    return projects.value.filter(project => {
+                    return project.tag === status.value;
+                }) 
+           }
+           else{
+               vueslide.value = false;
+               return projects.value;
+            }
+        })
+        function animate(initVal, lastVal, duration) {
+
+            let startTime = null;
+
+                //get the current timestamp and assign it to the currentTime variable
+                let currentTime = Date.now();
+
+                //pass the current timestamp to the step function
+                const step = (currentTime ) => {
+
+                        //if the start time is null, assign the current time to startTime
+                        if (!startTime) {
+                            startTime = currentTime ;
+                        }
+
+                        //calculate the value to be used in calculating the number to be displayed
+                        const progress = Math.min((currentTime  - startTime) / duration, 1);
+
+                        //calculate what to be displayed using the value gotten above
+                        number.value = Math.floor(progress * (lastVal - initVal) + initVal);
+
+                        //checking to make sure the counter does not exceed the last value (lastVal)
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        }
+                        else{
+                            window.cancelAnimationFrame(window.requestAnimationFrame(step));
+                        }
+                    };
+
+                    //start animating
+                    window.requestAnimationFrame(step);
+         }
+        setInterval(() => {
+            animate(0, projectsfilter.value.length, 1000)
+        }, 2000);
+        return{store,vueslide,projects,number,status,projectsfilter,click_button };
     }
 }
 </script>
 
 <style>
 .project_container{
-    height:90vh;
+    min-height:90vh;
     align-items:center;
+    overflow:hidden;
+}
+.project_container h1{
+    width:80%;
 }
 .project_container .button_container{
     margin-top:50px;
@@ -64,11 +144,55 @@ div.active{
     position:absolute;
     bottom:0;
     left:0;
+    transition: 0.5s;
     border-radius:10px;
+}
+.projects_container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    max-width:1300px;
+    padding:10px;
+    margin-top:30px;
+    flex-wrap: wrap;
+}
+.projects_container .project{
+    max-width:400px;
+    min-height:300px;
+    margin:15px;
+    margin-top:20px;
+}
+.projects_container .project1{
+    min-width:600px;
+    height:300px;
+    margin:15px;
+}
+.projects_container .project img {
+    width:100%;
+    height:200px;
+}
+.projects_container .project h1{
+    font-size:2.5em;
+    text-align:center;
+}
+.projects_container .project .link{
+    width:100%;
+    display:flex;
+}
+.projects_container .project .link a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size:2em;
+    border-left:1px solid #3d3d3d;
+    transition: 0.8s;
+}
+.projects_container .project .link a:hover{
+    color:#17b87a;
 }
 .projects-slide{
     width:90%;
-    opacity:0.5;
     height:500px;
     display:flex;
     align-items:center;
@@ -90,8 +214,9 @@ div.active{
     font-size:3em;
 }
 .splide__slide img{
-    width:300px;
+    width:500px;
     height:300px;
+    align-items:center;
 }
 .splideproject .link{
     width:75%;
@@ -108,6 +233,43 @@ div.active{
     transition:0.6s;
 }
 .splideproject .link a:hover i{
-    color:#176ab8;
+    color:#17b87a;
+}
+
+@media (max-width:600px){
+    .projects_container .project1{
+    min-width:400px;
+}
+.splide{
+    margin:0 auto;
+    width:90%;
+}
+.splide__slide{
+    width:500px!important;
+    margin: 0 40px;
+}
+.splide__slide img{
+    width:300px;
+    height:250px;
+    align-items:center;
+}
+}
+@media (max-width:450px){
+    .splide__slide{
+    width:300px!important;
+    margin: 0 40px;
+}
+.splide__slide img{
+    width:350px;
+    height:200px;
+    align-items:center;
+}
+.splideproject h1{
+    font-size:1.5em;
+}
+.splideproject .link a i{
+    font-size:2em;
+    transition:0.6s;
+}
 }
 </style>

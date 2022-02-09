@@ -1,18 +1,18 @@
 <template>
     <div class="navbar"
     :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
-           <img :src="logoimg" alt="">
+           <router-link to="/"><img :src="logoimg" alt=""></router-link>
            <div class="icon-bar">
                <i class="fas animate__animated animate__flash animate__slow animate__infinite animate__delay-1s"
                :class="{'fa-volume-mute' : !store.state.mute , 'fa-volume-up' : store.state.mute }" @click.prevent="soundplay"></i>
                <i class="far animate__animated animate__fadeIn"
                 :class="{'fa-sun' : !store.state.dark , 'fa-moon' : store.state.dark, }" @click.prevent="switchmode"></i>
                <!-- <i class="fas fa-moon animate__animated animate__fadeIn"></i> -->
-               <select name="" id="" class="lang"
+               <!-- <select name="" id="" class="lang"
                :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
                    <option value="eng">English</option>
                     <option value="mm">Burmese</option>
-               </select>
+               </select> -->
            </div>
                 <audio loop>
                     <source src="../assets/barradeen-bedtime-after-a-coffee.mp3">

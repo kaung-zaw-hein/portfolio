@@ -98,4 +98,15 @@ main{
     background:rgb(119, 74, 74);
     font-size:0.8em;
 }
+@media (max-width:600px){
+  .header {
+    width:85%;
+    margin:20px auto;
+    padding:20px;
+}
+  .header img{
+    max-width:400px;
+    height:400px;
+}
+}
 </style>
