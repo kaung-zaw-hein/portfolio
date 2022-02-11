@@ -3,7 +3,7 @@
     
     <div class="header"
     :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }">
-        <img  class=" animate__animated animate__fadeInUp"  src="../assets/images/Ikbal.png" alt="">
+        <!-- <img  class=" animate__animated animate__fadeInUp"  src="../assets/images/Ikbal.png" alt=""> -->
         <p :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" class="animate__animated animate__flash ">
             Welcome from "BRNYR"<br>
             I'm  {{typeValue}}
@@ -79,7 +79,7 @@ main{
     flex-direction: column;
 }
 .header {
-    width:85%;
+    height:600px;
     margin:20px auto;
     padding:20px;
     border-radius: 10px;
@@ -92,7 +92,8 @@ main{
     height:600px;
 }
 .header p {
-    font-size:2em;
+    font-size:5em;
+    margin: 0 auto;
 }
 .line{
     background:rgb(119, 74, 74);
@@ -104,9 +105,8 @@ main{
     margin:20px auto;
     padding:20px;
 }
-  .header img{
-    max-width:400px;
-    height:400px;
+  .header p{
+    font-size:3em;
 }
 }
 </style>

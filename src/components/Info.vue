@@ -4,7 +4,7 @@
       <img src="../assets/images/Other.png" alt=""
       data-aos="fade-down">
       <div class="about_content">
-        <h1 class="animate__fadeIn animate__animated" data-aos="fade-left">
+        <h1 class="animate__fadeIn animate__animated" data-aos="fade-right">
           Hello! My name is <span>
            Kaung<br/>
           Zaw<br/>
