@@ -12,11 +12,7 @@
         </span>
         </h1>
         <div class="detail" data-aos="zoom-in">
-<<<<<<< HEAD
           <p>A frontend developer based out of Myanmar<a href="https://github.com/Kv0nzee?tab=repositories"><i class="devicon-github-original"></i></a></p>
-=======
-          <p>A fronend developer based out of Myanmar<a href="https://github.com/Kv0nzee?tab=repositories"><i class="devicon-github-original"></i></a></p>
->>>>>>> master
           <p data-aos="fade-up">I got into the field of Web Development when I was in university.
             I realized that I am passionate to writing computer code.
             I create custom websites to help business do better online.
@@ -37,7 +33,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />               
           </div>
           <br>
-          <a data-aos="fade-up" href="https://drive.google.com/file/d/1bLcwJrFjuQ0BLxOh6faBqWNu9qimzC28/view?usp=sharing">Download CV</a>
+          <a data-aos="fade-up" href="https://drive.google.com/file/d/1T0VRZLYdLtkX2b9FHn8fCtQEoH_UEO3b/view?usp=sharing">Download CV</a>
           <a data-aos="fade-up" href = "mailto:kaungzawhein1963@gmail.com?subject = Feedback&body = Message">
               Contact Me
               </a>
