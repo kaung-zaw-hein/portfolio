@@ -3,8 +3,8 @@
       <div :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" class="button_container">
           <div class="active"></div>
           <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('all') ">All</button>
+          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('reactjs')">Reactjs</button>
           <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('vue') ">Vuejs</button>
-          <button :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }" @click.prevent="click_button('others')">Others</button>
       </div>
       <h1 class="animate__animated animate__flash animate__infinite animate__delay-1s">Projects:{{number}}</h1>
       <div class="projects-slide animate__animated animate__fadeIn animate__faster" v-if="vueslide">
@@ -24,7 +24,7 @@
             </Splide>
       </div>
       <div class="projects_container animate__animated animate__fadeIn animate__faster" :class="{'lighttheme' : !store.state.dark , 'darktheme' : store.state.dark }" v-if="!vueslide">
-                    <div class="project" :class="{'project1': project.main}"
+                    <div class="project"
                     v-for="project in projectsfilter" :key="project.title">
                             <img :src="project.imageurl" :alt="project.title">
                             <h1>{{project.title}}</h1>
@@ -62,7 +62,7 @@ export default {
                         return project.tag === status.value;
                 }) 
            }
-           else if(status.value === "others"){
+           else if(status.value === "reactjs"){
                     vueslide.value = false;
                     return projects.value.filter(project => {
                     return project.tag === status.value;
@@ -157,27 +157,27 @@ div.active{
     flex-wrap: wrap;
 }
 .projects_container .project{
-    max-width:400px;
-    min-height:300px;
+    width:400px;
+    height:350px;
     margin:15px;
     margin-top:20px;
-}
-.projects_container .project1{
-    min-width:600px;
-    height:300px;
-    margin:15px;
 }
 .projects_container .project img {
     width:100%;
     height:200px;
+    object-fit: cover;
 }
 .projects_container .project h1{
-    font-size:2.5em;
+    font-size:2em;
+    width:100%;
+    height:100px;
     text-align:center;
 }
 .projects_container .project .link{
     width:100%;
     display:flex;
+    justify-content:center;
+    align-items:center;
 }
 .projects_container .project .link a{
     display: flex;

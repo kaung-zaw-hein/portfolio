@@ -18,8 +18,8 @@
           </div>
           <div class="service" data-aos="fade-up">
               <div class="service_detail"  data-aos="fade-right">
-                  <h1>Javascript Framework Vue </h1>
-                  <p>Yes i can build web app with js framework Vue.</p>
+                  <h1>Reactjs and Vuejs </h1>
+                  <p>Yes i can build web app with both js framework Vue and Reactjs.</p>
               </div>
               <div class="block_container" data-aos="fade-down">
                   <div class="coding"  >
@@ -59,7 +59,7 @@
               </div>
           </div>
     </div>
-        <router-link :to="{name: 'Projects'}"  data-aos="fade-up" class="explore animate__fadeIn animate__animated"
+        <router-link :to="{name: 'Projects'}"  class="explore animate__fadeIn animate__animated"
         :class="{'lighttheme' : store.state.dark , 'darktheme' : !store.state.dark }"
         >Lets explore my projects.</router-link>
   </main>
@@ -131,7 +131,7 @@ main{
     flex-direction:column;
 }
 .service_detail h1{
-  height: 1em;
+  height: 1.2em;
   line-height: 1.2em;
   position: relative;
   overflow-y: hidden;
@@ -154,7 +154,7 @@ main{
 .coding h1{
     float:left;
     font-size:1em;
-    margin-top:-5px;
+    margin-top:-10px;
     margin-left:10px;
 }
 .coding img{

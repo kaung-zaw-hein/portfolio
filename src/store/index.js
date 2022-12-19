@@ -6,6 +6,47 @@ export default createStore({
     dark:false,
     projects:[
       {
+        title:"Shorts Video Sharing Website",
+        githuburl:"https://github.com/Kv0nzee/brnyr_shorts-video-sharing-website-",
+        liveurl:"https://brnyr-shorts-video-sharing-website.vercel.app/",
+        imageurl:"https://user-images.githubusercontent.com/62888962/205449724-9ba777c9-eac8-4109-90ad-3cccf3c1e685.png",
+        tag:"reactjs"
+      },
+      {
+        title:"MERN-Blog",
+        githuburl:"https://github.com/Kv0nzee/-MERN-Blog",
+        liveurl:"https://mern-blog-sigma.vercel.app/posts",
+        imageurl:"https://user-images.githubusercontent.com/62888962/186191362-ab14e841-401a-406c-9b62-2ea89e8384f5.png",
+        tag:"reactjs"
+      },
+      {
+        title:"Admin Dashboard",
+        githuburl:"https://github.com/Kv0nzee/admin_dashboard",
+        imageurl:"https://user-images.githubusercontent.com/62888962/181919162-6496afcf-ba00-4fd1-8c9f-152dee722db8.png",
+        tag:"reactjs"
+      },
+      {
+        title:"BRNYR GYM APP",
+        githuburl:"https://github.com/Kv0nzee/gym_exercise",
+        liveurl:"http://gym-exercise-wheat.vercel.app/",
+        imageurl:"https://user-images.githubusercontent.com/62888962/181916599-bd1d9eaa-44a2-434c-adda-8587a00aa751.png",
+        tag:"reactjs"
+      },
+      {
+        title:"Crypto Global Stats App",
+        githuburl:"https://github.com/Kv0nzee/cryptoapp",
+        liveurl:"",
+        imageurl:"https://user-images.githubusercontent.com/62888962/172120785-5faa7a46-86d3-4f31-87f9-72658be90973.png",
+        tag:"reactjs"
+      },
+      {
+        title:"React Ecommerce App",
+        githuburl:"https://github.com/Kv0nzee/nextjs-ecommerce",
+        liveurl:"http://nextjs-ecommerce-kv0nzee.vercel.app/",
+        imageurl:"https://user-images.githubusercontent.com/62888962/170172626-bb4d739b-9068-4b1d-825b-e789bfdb4837.png",
+        tag:"reactjs"
+      },
+      {
         title:"Music Library",
         main:true,
         githuburl:"https://github.com/Kv0nzee/music-with-local",
@@ -25,20 +66,6 @@ export default createStore({
         githuburl:"https://github.com/Kv0nzee/memorygame-with-vue",
         liveurl:"https://memorygame-with-vue.vercel.app/",
         imageurl:"https://user-images.githubusercontent.com/62888962/152989091-16104b47-b08b-4cab-a026-511c7ecd428d.png",
-        tag:"vue"
-      },
-      {
-        title:"Blog(CRD) App",
-        githuburl:"https://github.com/Kv0nzee/Blog-systerm",
-        liveurl:"https://blog-systerm.vercel.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152988398-f8af71cd-e8ce-4af3-841f-c4994069c663.png",
-        tag:"vue"
-      },
-      {
-        title:"To do list  App",
-        githuburl:"https://github.com/Kv0nzee/Vuejs-todolist",
-        liveurl:"http://vuejs-todolist-nu.vercel.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152988641-4ee2cd26-6b42-47ca-8836-b8cc2c34d1b8.png",
         tag:"vue"
       },
       {
@@ -62,53 +89,25 @@ export default createStore({
         tag:"vue"
       },
       {
-        title:"Schoblog(wth WP,PhP)",
-        githuburl:"https://github.com/Kv0nzee/wp_theme-SCHblog--site-using-PHP-",
-        liveurl:"http://brnyrlearning20edu.infinityfreeapp.com/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152989760-abb2ef21-b550-4b4c-a53f-44449e821687.png",
-        tag:"others"
+        title:"FOOD ORDER App",
+        githuburl:"https://github.com/Kv0nzee/React-foodorder-app",
+        liveurl:"",
+        imageurl:"https://user-images.githubusercontent.com/62888962/165102161-4413ee60-949b-4290-b2d3-63a405e84ba8.png",
+        tag:"reactjs"
       },
       {
-        title:"Daily Jokes",
-        githuburl:"https://github.com/Kv0nzee/codePlayground-Html-css-js-",
-        liveurl:"https://dailyjoke-js.netlify.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990344-debf924b-6eaa-4c8f-9828-6e4d78a4d8b2.png",
-        tag:"others"
+        title:"Search App",
+        githuburl:"https://github.com/Kv0nzee/react-search-app",
+        liveurl:"",
+        imageurl:"https://user-images.githubusercontent.com/62888962/170172035-9060ec24-1e9d-45b7-990b-c6d3d5be2583.jpg",
+        tag:"reactjs"
       },
       {
-        title:"eventkey-js",
-        githuburl:"https://github.com/Kv0nzee/codePlayground-Html-css-js-",
-        liveurl:"https://eventkey-js.netlify.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990376-2f3cd6d6-8741-414b-a4aa-4a7dd6bfcf1d.png",
-        tag:"others"
-      },
-      {
-        title:"music player",
-        githuburl:"https://github.com/Kv0nzee/codePlayground-Html-css-js-",
-        liveurl:"https://musicplayer-js-kv0nzee.netlify.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990399-4385f14e-c9bf-466e-ab72-d61897dce176.png",
-        tag:"others"
-      },
-      {
-        title:"Shop",
-        githuburl:"https://github.com/Kv0nzee/codePlayground-Html-css-js-",
-        liveurl:"https://shop-api-js-kv0nzee.netlify.app",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990480-3ac0b457-2506-4b18-8f5b-497bcd2e58bd.png",
-        tag:"others"
-      },
-      {
-        title:"Gallery Filter",
-        githuburl:"https://github.com/Kv0nzee/codePlayground-Html-css-js-",
-        liveurl:"https://galleryfilter-js.netlify.app/",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990566-ae37230f-3c95-43bd-be5d-5be54880a816.png",
-        tag:"others"
-      },
-      {
-        title:"Calculator",
-        githuburl:"https://github.com/Kv0nzee/Calculator-using-HTML-CSS-JAVASCRIPT  ",
-        liveurl:"https://calculatorjsbykv0nzee.netlify.app",
-        imageurl:"https://user-images.githubusercontent.com/62888962/152990251-cdebdc89-f2af-40c6-897e-ad6f86addde5.png",
-        tag:"others"
+        title:"React Weather App",
+        githuburl:"https://github.com/Kv0nzee/react-open-weather",
+        liveurl:"http://react-open-weather.vercel.app/",
+        imageurl:"https://user-images.githubusercontent.com/62888962/165542160-c2e32e4b-1d20-4a2c-b6db-6297823a09c4.png",
+        tag:"reactjs"
       },
     ]
   },

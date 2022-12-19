@@ -26,7 +26,7 @@ export default {
       return {
         typeValue: '',
         typeStatus: false,
-        typeArray: ['Kaung Zaw Hein', 'Web Devloper', 'creater of BRNYR', 'freelance Devloper'],
+        typeArray: ['Kaung Zaw Hein', 'Web Developer', 'Creater of BRNYR', 'freelance Developer'],
         typingSpeed: 150,
         erasingSpeed: 100,
         newTextDelay: 700,
